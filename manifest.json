@@ -1,11 +1,16 @@
 {
   "manifest_version": 3,
   "name": "X/Twitter 侧边栏",
-  "version": "1.0",
+  "version": "1.1",
   "description": "在浏览器侧边栏中打开 X (Twitter)。",
   "permissions": [
     "sidePanel",
-    "tabs"
+    "tabs",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "*://*.twitter.com/*",
+    "*://*.x.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -17,6 +22,13 @@
       "48": "icons/icon48.svg",
       "128": "icons/icon128.svg"
     }
+  },
+  "declarative_net_request" : {
+    "rule_resources" : [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
   },
   "side_panel": {
     "default_path": "sidepanel.html"
