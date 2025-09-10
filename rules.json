@@ -16,7 +16,7 @@
       ]
     },
     "condition": {
-      "domains": ["x.com", "twitter.com"],
+      "requestDomains": ["x.com", "twitter.com"],
       "resourceTypes": ["sub_frame"]
     }
   }
